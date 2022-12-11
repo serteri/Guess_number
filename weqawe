@@ -1,0 +1,23 @@
+if number == guess:
+                                        new_game = input("New game (Y/N) :")
+                                        if new_game.lower() == "y":
+                                            number = Number().number_guess()
+                                            print(number)
+                                           
+                                        else:
+                                            print("Thank you for playing")
+                                            break 
+                                    else:
+
+                                        
+                                    print(f"Your point is {guess_count}")
+                                    guess_count = 1
+                                    new_game = input("New game (Y/N) :")
+                                    if new_game.lower() == "y":
+                                        number = Number().number_guess()
+                                        print(number)
+                                        game()
+                                    else:
+                                        print("Thank you for playing")
+                                        break 
+            
