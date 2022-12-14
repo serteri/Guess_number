@@ -1,10 +1,5 @@
 import json
 
-
-
-
-
-
 class Player:
     def __init__(self,name,point = 0):
        self.name =name

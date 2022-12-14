@@ -1,12 +1,11 @@
 
-
 from player import Player
-import math
+from timeit import default_timer as timer
 import re
 import json
 import random
 import csv
-from operator import itemgetter, attrgetter
+
 #Create json file to score players and their scores
 
 filename = 'scores.json'
@@ -180,8 +179,12 @@ def game():
     print(count) 
          
 
-
+start =timer()
 game()
+
+end =timer()
+
+print(f"Game took {end-start} seconds to finish.")
 
 with open("scores.json") as json_file:
     data3 = json.load(json_file)
