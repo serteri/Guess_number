@@ -112,11 +112,11 @@ player = Player(name)
 #Number generating
 computer_number = Number()
 computer_number1 = str(computer_number.number_guess())
-
+print(computer_number1)
 # update json file         
 def json_update(filename):
     global scores
-    with open("scores.json") as json_file:
+    with open("./src/scores.json") as json_file:
             data1 = json.load(json_file)
             temp = data1
             y = {"firstname":scores["firstname"],"score":str(scores['score'])}
@@ -130,7 +130,7 @@ def all_number(guess):
  # csv file update   
 def csv_update(filename):
     global scores
-    with open("scores.json") as csv_file:
+    with open("./src/scores.json") as csv_file:
             data1 = json.load(csv_file)
             temp = data1
             y = [{"firstname":scores["firstname"] , "score": scores["score"]}]
@@ -177,8 +177,8 @@ def game():
     player.point_show()
     scores['firstname'] = player.name
     scores['score'] = player.point
-    json_update('scores.json')
-    csv_update('scores.csv')  
+    json_update('./src/scores.json')
+    csv_update('./src/scores.csv')  
     new_game = input("New game :(Y/N)")
     if new_game.lower() == 'y':
                     computer_number = Number()
@@ -197,7 +197,7 @@ end =timer()
 
 print(f"Game took {end-start} seconds to finish.")
 #Top three sorted and printing
-with open("scores.json") as json_file:
+with open("./src/scores.json") as json_file:
     data3 = json.load(json_file)
     # x = [tuple(d.values()) for d in data3]
     
