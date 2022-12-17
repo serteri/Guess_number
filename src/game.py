@@ -72,7 +72,7 @@ class Number:
        
         guess = str(guess)    
         guess_count+=1
-        
+        if guess.isnumeric() and len(guess) == 4 and not Number.different_digits(int(guess)):
         
              
             #  if Number.check_lenght(guess) and Number.check_number(guess):
