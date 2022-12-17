@@ -33,4 +33,33 @@ If user enter a number that length is not 4,it will give you an error.
 
 If the guess starts with 0, again it will give you length error.
 
-![Repeating digit](./screen%20shots/part_4.png)
+![First Digit 0](./screen%20shots/part_4.png)
+
+If there is a repeating number ,it gives an error.
+
+![Repeating digit](./screen%20shots/part_5.png)
+
+If gues number is passed all parts above, guess comparing parts begins.
+
+![Guessing part](./screen%20shots/part_6.png)
+
+![Guessing part](./screen%20shots/part_7.png)
+![Guessing part](./screen%20shots/part_8.png)
+
+If you guess the number correctly, the game asks you for another game and store your point.
+
+![Guess correctly](./screen%20shots/part_9.png)
+
+If your answer is y, new game starts.
+
+![New game](./screen%20shots/part_10.png)
+
+When you write n, game ends and display thanks for playing and game time. And also top three players... List item shows there for demostration purposes.
+
+![End game](./screen%20shots/part_11.png)
+
+# Desing Process
+
+- First step: I developed class Player to store player names and scores. Initial score is 0
+
+![Player Class](./screen%20shots/player_class.png)

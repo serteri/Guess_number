@@ -156,7 +156,6 @@ def game():
     global computer_number1
     
     name_check(name)
- 
     while True:    
             try: 
                guess= int(input("Enter your 4 digit guess: "))
@@ -172,6 +171,7 @@ def game():
                 print("Sorry your guess must have 4 digits: ")
             else:
                 break
+    
             
     
     count= Number.num_check(str(guess),computer_number1)
