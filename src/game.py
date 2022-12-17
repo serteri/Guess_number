@@ -14,7 +14,7 @@ scores ={}
 name = input("Please enter your name: ")
 
 # Initial values
-message =''
+
 guess_count =1
 plus = 0
 negative =0
@@ -114,7 +114,7 @@ player = Player(name)
 #Number generating
 computer_number = Number()
 computer_number1 = str(computer_number.number_guess())
-print(computer_number1)
+
 # update json file         
 def json_update(filename):
     global scores
@@ -149,10 +149,10 @@ def game():
     global negative
     global guess_count
     global filename
-    global data
+    
     global scores
     global guess
-    global message
+    
     global computer_number1
     
     name_check(name)
@@ -182,7 +182,7 @@ def game():
     json_update('./src/scores.json')
     csv_update('./src/scores.csv')  
     new_game = input("New game :(Y/N)")
-    if new_game.lower() == 'y':
+    if new_game.lower() == 'y' or new_game == "Y":
                     computer_number = Number()
                     computer_number1 = str(computer_number.number_guess())
                     print(computer_number1) 
@@ -199,3 +199,16 @@ end =timer()
 
 print(f"Game took {math.trunc(end-start)} seconds to finish.")
 #Top three sorted and printing
+with open("./src/scores.json") as json_file:
+    data3 = json.load(json_file)
+    # x = [tuple(d.values()) for d in data3]
+    
+    # y= sorted(x, key=lambda scores: scores[1])
+    x =sorted(data3,key=lambda product:product['score'])
+
+   
+    if (len(x)< 3):
+        print("Top three is not avaliable yet.")
+    else:
+            
+     print(f"Top three is: {x[0]['firstname']} point is {x[0]['score']} ,{x[1]['firstname']} point is {x[1]['score']},{x[2]['firstname']} point is {x[2]['score']} ")
