@@ -58,12 +58,14 @@ class Number:
       global negative
       global guess_count
       
-      guess = str(guess)          
+      guess = str(guess)  
+      # First guess and correct guess        
       if number == (guess):
                   print("You win")
                   print(f"Your point is {guess_count}")
                   if guess_count == 1:
-                     guess_count = 1     
+                     guess_count = 1
+                # it is not first guess          
                   else:
                      guess_count
 
@@ -72,6 +74,9 @@ class Number:
        
         guess = str(guess)    
         guess_count+=1
+        
+        # check after first guess if it is not correct one ,is digit,length and repating digit
+        
         if guess.isnumeric() and len(guess) == 4 and not Number.different_digits(int(guess)):
         
              
@@ -84,7 +89,7 @@ class Number:
                                                                     
                                     else:
                                         negative += 1
-                                                    
+            # display output                                        
             if plus > 0 and negative > 0 :
                                 print(f"Your guess is +{plus} amd - {negative}")
             elif plus >0 and negative == 0:
@@ -97,7 +102,8 @@ class Number:
             negative =0
             guess = input("Your guess: ")            
             Number.num_check(guess,number)    
-            return guess_count        
+            return guess_count
+        # if it is not a valid guess        
         else:
              guess= (input("Enter your 4 digit guess: "))
              Number.num_check(guess,number)    
