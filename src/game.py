@@ -5,6 +5,7 @@ import re
 import json
 import random
 import csv
+from sys import argv
 
 #Create json file to score players and their scores.name input creating
 
@@ -101,11 +102,12 @@ class Number:
              guess= (input("Enter your 4 digit guess: "))
              Number.num_check(guess,number)    
 # username checking
+
 def name_check(str):
     if str == '':
         name = input("Please enter your name: ")
         name_check(name)
-        
+           
  #player creating     
 player = Player(name)
 
