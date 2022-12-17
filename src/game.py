@@ -124,7 +124,7 @@ def json_update(filename):
             y = {"firstname":scores["firstname"],"score":str(scores['score'])}
             temp.append(y)
     with open (filename,"w") as f:
-            json.dump(data1,f)         
+            json.dump(data1,f)      
     
 def all_number(guess):
         
