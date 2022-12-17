@@ -6,7 +6,7 @@ import json
 import random
 import csv
 from sys import argv
-
+import math
 #Create json file to score players and their scores.name input creating
 
 filename = 'scores.json'
@@ -197,7 +197,7 @@ game()
 
 end =timer()
 
-print(f"Game took {end-start} seconds to finish.")
+print(f"Game took {math.trunc(end-start)} seconds to finish.")
 #Top three sorted and printing
 with open("./src/scores.json") as json_file:
     data3 = json.load(json_file)
