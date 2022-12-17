@@ -158,3 +158,57 @@ if it is not a valid number,it will give an error
 Json file example:
 
 ![json file example](./screen%20shots/json_file.png)
+
+- Try.except code: First check was easy .It was a check if number is digit or not. I wanted to check if number guess length is 4 or not and also check if the number has repeating digits.
+
+I used for those ones, else statements as follows:
+
+![try/except](./screen%20shots/try_except-else.png)
+
+- The last issue is to display top three players. I need to sort the json file with the lowest points.
+  The json file is read first, and using lambda key word it is sorted with the lowest points.
+
+Printing the lowest three points.
+
+![top players](./screen%20shots/top_players.png)
+
+# Logic diagram
+
+I add the logic diagram of the program.
+
+![logic of the game](./diagram/Guess_Number.png)
+
+# Bash script
+
+Bash script is as follows:
+
+```script
+#!/bin/bash
+
+set -u
+
+if [[ -z "$VIRTUAL_ENV" ]]; then
+    echo "No VIRTUAL_ENV set"
+    pip install virtualenv
+else
+    echo "VIRTUAL_ENV is set"
+fi
+
+if [[ "$(python3 -V)" =~ "Python 3" ]]
+then
+  echo "Python 3 installed"
+else
+ python3 -m ensurepip --default-pip
+
+fi
+pip install -r requirements.txt
+
+if [$(which python) = ""]
+then
+    echo "You do not have python"
+    python -m ensurepip --default-pip
+fi
+pip install -r requirements.text
+
+python3 ./src/game.py
+```
