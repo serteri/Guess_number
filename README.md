@@ -3,3 +3,34 @@
 I am trying to desing a guess number game.In the beginning computer choose a number between 1234 and 9876 because all numbers must be different. And you try to guess the number. For example computer chose 1234 and you guessed 1456 ,output would be +1 ,-1 because you did guess correct two number but one of them is in the correct position and the other is not.
 
 At the end of the game , computer asks you for another game and saved your score.
+
+- It is a game.
+
+* Computer generated a number.
+* You try to guess the computer generated number.
+* Computer generate number from 1000 to 9999 but all numbers must be different.
+* Number can not be 1000, 1222 ,1244,9999 etc..It means no repeating digits.
+* Number can not start with 0.
+
+I will go through the game step by step.
+
+The game first ask your name and store it player variable.
+![First name](./screen%20shots/ask_name.png)
+
+Demonstration purposes, the generated number will be shown.
+
+The game asks you for your guess.
+
+![Guess](./screen%20shots/part_1.png)
+
+There are some checks after a player enters their first guess.The game checks if user input is a digit, length is 4, has a repeating digits.
+
+![Not digit](./screen%20shots/part_2.png)
+
+If user enter a number that length is not 4,it will give you an error.
+
+![Not for digit](./screen%20shots/part_3.png)
+
+If the guess starts with 0, again it will give you length error.
+
+![Repeating digit](./screen%20shots/part_4.png)
