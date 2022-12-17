@@ -199,16 +199,3 @@ end =timer()
 
 print(f"Game took {math.trunc(end-start)} seconds to finish.")
 #Top three sorted and printing
-with open("./src/scores.json") as json_file:
-    data3 = json.load(json_file)
-    # x = [tuple(d.values()) for d in data3]
-    
-    # y= sorted(x, key=lambda scores: scores[1])
-    x =sorted(data3,key=lambda product:product['score'])
-
-   
-    if (len(x)< 3):
-        print("Top three is not avaliable yet.")
-    else:
-            
-     print(f"Top three is: {x[0]['firstname']} point is {x[0]['score']} ,{x[1]['firstname']} point is {x[1]['score']},{x[2]['firstname']} point is {x[2]['score']} ")
