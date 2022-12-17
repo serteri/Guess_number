@@ -212,3 +212,11 @@ pip install -r requirements.text
 
 python3 ./src/game.py
 ```
+
+# Testing
+
+I did manual testing. I tested all required function such as num_check function, try/exception,json file update,display top three players,check the guess number.
+
+I added the screen shots of the testing file.
+
+![testing file](./testing/test.png)
