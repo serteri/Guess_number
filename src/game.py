@@ -105,7 +105,7 @@ class Number:
             return guess_count
         # if it is not a valid guess        
         else:
-             guess= (input("Enter your 4 digit guess: "))
+             guess= (input("Wrong format.Pleae enter your 4 digit guess: "))
              Number.num_check(guess,number)    
 # username checking
 
