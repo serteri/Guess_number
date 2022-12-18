@@ -220,3 +220,6 @@ I did manual testing. I tested all required function such as num_check function,
 I added the screen shots of the testing file.
 
 ![testing file](./src/docs/testing/test.png)
+
+Youtube link:
+[Youtube Termial App](https://youtu.be/5IWbmkL_m0g)

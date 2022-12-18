@@ -59,16 +59,19 @@ class Number:
       global guess_count
       
       guess = str(guess)  
-      # First guess and correct guess        
+      # First guess and correct guess
+      
+      
+                  
       if number == (guess):
                   print("You win")
-                  print(f"Your point is {guess_count}")
+                  
                   if guess_count == 1:
                      guess_count = 1
                 # it is not first guess          
                   else:
                      guess_count
-
+                  print(f"Your point is {guess_count}")
                   return guess_count
       else: 
        
@@ -77,7 +80,7 @@ class Number:
         
         # check after first guess if it is not correct one ,is digit,length and repating digit
         
-        if guess.isnumeric() and len(guess) == 4 and not Number.different_digits(int(guess)):
+        if guess.isnumeric() and len(guess) == 4 and  not Number.different_digits(int(guess)):
         
              
             #  if Number.check_lenght(guess) and Number.check_number(guess):
@@ -94,8 +97,7 @@ class Number:
                                 print(f"Your guess is +{plus} amd - {negative}")
             elif plus >0 and negative == 0:
                                 print(f"Your guess is + {plus}")
-            elif plus == 4 or negative ==4:
-                print("Your guess has same numbers,please try again: ")                    
+                              
             else:
                                 print(f"Your guess is -{negative}")
             plus = 0
@@ -110,17 +112,18 @@ class Number:
 # username checking
 
 def name_check(str):
+    global name
     if str == '':
-        name = input("Please enter your name: ")
+        name=input("Name can not be empty: ")
         name_check(name)
-           
+    return name   
  #player creating     
-player = Player(name)
+
 
 #Number generating
 computer_number = Number()
 computer_number1 = str(computer_number.number_guess())
-
+print(computer_number1)
 # update json file         
 def json_update(filename):
     global scores
@@ -143,7 +146,7 @@ def csv_update(filename):
             temp = data1
             y = [{"firstname":scores["firstname"] , "score": scores["score"]}]
             temp.append(y)
-            print(y)
+            
     with open (filename,"a") as f:
             writer = csv.DictWriter(f,fieldnames=['firstname','score'])
             writer.writeheader()
@@ -155,13 +158,15 @@ def game():
     global negative
     global guess_count
     global filename
-    
+    global name
     global scores
     global guess
     
     global computer_number1
     
-    name_check(name)
+    name = name_check(name)
+    
+    player = Player(name)
     while True:    
             try: 
                guess= int(input("Enter your 4 digit guess: "))
@@ -169,18 +174,18 @@ def game():
                 
                 print("That is not a number")
                 continue
-            
-            if Number.different_digits((guess)):
-                print("All digits must be different: ")
-                
             if len(str(guess)) !=4:
                 print("Sorry your guess must have 4 digits: ")
+            elif Number.different_digits(guess):
+                print("All digits must be different: ")
+        
             else:
                 break
     
             
     
     count= Number.num_check(str(guess),computer_number1)
+    
     player.point = count
     player.point_show()
     scores['firstname'] = player.name
@@ -191,8 +196,7 @@ def game():
     if new_game.lower() == 'y' or new_game == "Y":
                     computer_number = Number()
                     computer_number1 = str(computer_number.number_guess())
-                    print(computer_number1) 
-                  
+                    
                     game()
     else:
                     print("Thank you for playing")    
