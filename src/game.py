@@ -94,7 +94,7 @@ class Number:
                                         negative += 1
             # display output                                        
             if plus > 0 and negative > 0 :
-                                print(f"Your guess is +{plus} amd - {negative}")
+                                print(f"Your guess is +{plus} and - {negative}")
             elif plus >0 and negative == 0:
                                 print(f"Your guess is + {plus}")
                               
